@@ -16,35 +16,61 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    acquisti.cpp \
     animale.cpp \
     carnivoro.cpp \
     contenitore.cpp \
     controller.cpp \
+    dati_finanziari.cpp \
     erbivoro.cpp \
+    exceptions.cpp \
     main.cpp \
     model.cpp \
     onnivoro.cpp \
     orso.cpp \
     rinoceronte.cpp \
+    save_load.cpp \
     serpente.cpp \
+    vendite.cpp \
     vista.cpp \
+    vista_add_button.cpp \
     vista_finanza.cpp \
-    vista_lista.cpp
+    vista_finanza_acquisti.cpp \
+    vista_finanza_bilancio.cpp \
+    vista_finanza_menu.cpp \
+    vista_finanza_vendite.cpp \
+    vista_lista.cpp \
+    vista_lista_add.cpp \
+    vista_lista_options.cpp \
+    vista_lista_vendita.cpp
 
 HEADERS += \
+    acquisti.h \
     animale.h \
     carnivoro.h \
     contenitore.h \
     controller.h \
+    dati_finanziari.h \
     erbivoro.h \
+    exceptions.h \
     model.h \
     onnivoro.h \
     orso.h \
     rinoceronte.h \
+    save_load.h \
     serpente.h \
+    vendite.h \
     vista.h \
+    vista_add_button.h \
     vista_finanza.h \
-    vista_lista.h
+    vista_finanza_acquisti.h \
+    vista_finanza_bilancio.h \
+    vista_finanza_menu.h \
+    vista_finanza_vendite.h \
+    vista_lista.h \
+    vista_lista_add.h \
+    vista_lista_options.h \
+    vista_lista_vendita.h
 
 FORMS += \
     animale.ui
@@ -56,3 +82,10 @@ TRANSLATIONS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES +=
+
+DISTFILES += \
+    ../../RisorseQT/add_button.png \
+    ../../RisorseQT/remove_button.png \
+    ../../RisorseQT/save_button.png

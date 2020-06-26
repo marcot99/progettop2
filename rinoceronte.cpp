@@ -1,7 +1,7 @@
 #include "rinoceronte.h"
 
-Rinoceronte::Rinoceronte(int Pe, int A, int E, int Pb,string Cs, bool Ie,string S, bool V, string Pr, list<Tipo> t, int Co):
-Animale(Pe,A,E,Pb,Cs,Ie,S,V,Pr),Erbivoro(Pe,A,E,Pb,Cs,Ie,S,V,Pr,t),Corno(Co){}
+Rinoceronte::Rinoceronte(int id,int Pe, int A, int E, bool Ie,string S, list<Tipo> t, int Co):
+Animale(id,Pe,A,E,Ie,S),Erbivoro(id,Pe,A,E,Ie,S,t),Corno(Co){}
 
 bool Rinoceronte::isGrasso() const
 {
@@ -18,14 +18,20 @@ bool Rinoceronte::isdiValore() const
     return getCorno() > 2;
 }
 
-int Rinoceronte::PrezzoFinale() const
-{
-    return getPrezzoBase()+(isdiValore()?500:0);
-}
 
 int Rinoceronte::getCorno() const
 {
     return Corno;
+}
+
+Animale *Rinoceronte::clone() const
+{
+    return new Rinoceronte(*this);
+}
+
+std::string Rinoceronte::getSpecie() const
+{
+    return "Rinoceronte";
 }
 
 /*bool Rinoceronte::operator==(const Animale &a) const {

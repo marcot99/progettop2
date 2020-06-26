@@ -1,7 +1,12 @@
 #include "carnivoro.h"
 
-Carnivoro::Carnivoro(int Pe, int A, int E, int Pb, string Cs, bool Ie, string S, bool V, string Pr, bool ve, bool ne):
-    Animale(Pe,A,E,Pb,Cs,Ie,S,V,Pr),velenoso(ve),necrofago(ne){}
+Carnivoro::Carnivoro(int id,int Pe, int A, int E, bool Ie, string S, bool ve, bool ne):
+    Animale(id,Pe,A,E,Ie,S),velenoso(ve),necrofago(ne){}
+
+std::string Carnivoro::getTipo() const
+{
+    return "Carnivoro";
+}
 
 /*bool Carnivoro::operator==(const Animale &a) const{
     if(typeid(const Carnivoro&) != typeid(a)) return false;

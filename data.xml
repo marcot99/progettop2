@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animali>
+    <DatiFinanziari>
+        <TotaleAcquisti>
+            <TotAcquisti>0</TotAcquisti>
+        </TotaleAcquisti>
+        <TotaleVendite>
+            <TotVendite>0</TotVendite>
+        </TotaleVendite>
+        <Bilancio>
+            <Bilanciodato>0</Bilanciodato>
+        </Bilancio>
+    </DatiFinanziari>
+</animali>

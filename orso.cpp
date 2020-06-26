@@ -1,7 +1,7 @@
 #include "orso.h"
 
-Orso::Orso(int Pe, int A, int E, int Pb, string Cs, bool Ie, string S, bool V, string Pr, list<Tipo> t, bool ve, bool ne,int pe):
-Animale(Pe,A,E,Pb,Cs,Ie,S,V,Pr),Onnivoro(Pe,A,E,Pb,Cs,Ie,S,V,Pr,t,ve,ne),Pelliccia(pe){}
+Orso::Orso(int id,int Pe, int A, int E, bool Ie, string S, list<Tipo> t, bool ve, bool ne,int pe):
+Animale(id,Pe,A,E,Ie,S),Onnivoro(id,Pe,A,E,Ie,S,t,ve,ne),Pelliccia(pe){}
 
 int Orso::getPelliccia() const
 {
@@ -10,25 +10,30 @@ int Orso::getPelliccia() const
 
 bool Orso::isGrasso() const
 {
-    return (getAltezza()/getPeso() > 5 ? true : false);
+    return getAltezza()/getPeso() > 5;
 }
 
 bool Orso::isVecchio() const
 {
-    return (getEta() > 25 ? true : false);
+    return getEta() > 25;
 }
 
 bool Orso::isdiValore() const
 {
-    return (getPelliccia() > 2 ? true : false);
+    return getPelliccia() > 2;
 }
 
-int Orso::PrezzoFinale() const
-{
-    return getPrezzoBase()+(isdiValore()?500:0);
-}
 /*bool Orso::operator==(const Animale &a) const {
     if(typeid(const Orso&) != typeid(a)) return false;
     const Orso* p = dynamic_cast<const Orso*>(&a);
     return Animale::operator==(a) && getDieta() == p->getDieta() && getvelenoso() == p->getvelenoso() && getnecrofago() == p->getnecrofago() && getPelliccia() == p->getPelliccia();
 }*/
+Animale *Orso::clone() const
+{
+    return new Orso(*this);
+}
+
+std::string Orso::getSpecie() const
+{
+    return "Orso";
+}
